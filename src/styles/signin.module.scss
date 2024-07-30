@@ -1,0 +1,45 @@
+.signin {
+
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("https://bys.subu.edu.tr/images/bg.png");
+    background-size: cover;
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+
+
+    &_container {
+        background: #fff;
+        border-radius: 1rem;
+        padding: 45px 40px;
+
+        &_wrapper {
+
+            img {
+                margin-bottom: 1.5rem;
+            }
+
+
+        }
+
+    }
+
+    &_register_btn {
+        color: #094a88;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 0;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+}

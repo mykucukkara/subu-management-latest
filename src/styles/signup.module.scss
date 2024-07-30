@@ -1,0 +1,125 @@
+.signup {
+
+    height: 100vh;
+    overflow: hidden;
+    width: 100vw;
+    background-image: url("https://bys.subu.edu.tr/images/bg.png");
+    background-size: cover;
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    &_container {
+        background: #fff;
+        border-radius: 1rem;
+        padding: 3rem 5rem;
+
+        @media (width <=992px) {
+            padding: 2rem 1rem;
+        }
+
+        &_wrapper {
+
+            img {
+                margin-bottom: 1.5rem;
+            }
+
+
+        }
+
+    }
+
+    &_user_type {
+        &_button {
+
+            img {
+                padding-bottom: 8px;
+            }
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+
+            gap: .5rem;
+            width: 200px;
+            padding: .5rem 0;
+            background: #073f87;
+            border: none;
+        }
+
+    }
+
+
+    &_step_1 {
+
+        &_active {
+            height: 100%;
+            opacity: 1;
+            transition: 1.5s all ease;
+        }
+
+        &_passive {
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: 1.5s all ease;
+        }
+
+
+    }
+
+    &_step_2 {
+
+        &_active {
+            height: 100%;
+            width: 100%;
+            opacity: 1;
+            top: 0;
+            position: absolute;
+            transition: 1.5s all ease;
+        }
+
+        &_passive {
+            height: 100%;
+            width: 100%;
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            visibility: hidden;
+            transition: 1.5s all ease;
+        }
+
+        &_back_button {
+            position: absolute;
+            padding: .5rem;
+            border-radius: .5rem;
+            top: 0;
+            background: #094a88;
+            cursor: pointer;
+
+            @media (width <=992px) {
+                top: 1.5rem;
+                left: -1rem;
+            }
+
+        }
+    }
+
+    &_login_btn {
+        color: #094a88;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 0;
+        font-size: 1rem;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+    }
+
+
+
+}
