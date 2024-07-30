@@ -12,7 +12,7 @@ function InputError({ error, touched }) {
           }}
           className="my-2"
         >
-          <span className="opacity-0">"</span>
+          <span className="opacity-0">&nbsp;</span>
           <span
             style={{
               background: "rgba(255, 82, 82, 0.2)",
@@ -22,7 +22,7 @@ function InputError({ error, touched }) {
               padding: ".125rem .5rem",
             }}
           >
-            {error ? error : null}
+            {error ? error : ""}
           </span>
         </div>
       }
