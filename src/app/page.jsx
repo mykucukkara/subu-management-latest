@@ -2,7 +2,7 @@ import { cookies } from "next/headers";
 import Logout from "../components/button/Logout";
 
 export const getUser = async () =>
-  fetch("https://subu-management-yusufkaraaslns-projects.vercel.app/", {
+  fetch("https://subu-management-yusufkaraaslns-projects.vercel.app/api/user", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
