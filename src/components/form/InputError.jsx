@@ -19,10 +19,10 @@ function InputError({ error, touched }) {
               borderColor: "#ffcfcf",
               borderRadius: ".25rem",
               color: "#ff5252",
-              padding: ".125rem .5rem"
+              padding: ".125rem .5rem",
             }}
           >
-            {error ? error : ""}
+            {error ? error : null}
           </span>
         </div>
       }
