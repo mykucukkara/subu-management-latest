@@ -42,18 +42,17 @@ const SignIn = () => {
           password: values.password,
         });
 
-        if (!result?.success) {
+        if (result?.success) {
+          setCookie("token", result.data.token, {
+            maxAge: !values.remember_me ? 60 * 60 * 24 * 365 : undefined,
+            path: "/",
+          });
+          router.replace("/")
+          setLoading(false);
+        } else {
           setMessage("TC/Y. Kimlik no ve/veya şifre hatalı.");
           setLoading(false);
         }
-        setCookie("token", result.data.token, {
-          maxAge: !values.remember_me ? 60 * 60 * 24 * 365 : undefined,
-          path: "/",
-        });
-
-        setLoading(false);
-
-        router.replace("/");
       }}
     >
       {({ values, handleChange, handleBlur, handleSubmit, setFieldValue }) => (

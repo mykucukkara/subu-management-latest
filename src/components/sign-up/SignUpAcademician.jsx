@@ -6,7 +6,6 @@ import styles from "../../styles/signup.module.scss";
 import Image from "next/image";
 import Input from "../form/Input";
 import { Button, Col, Row } from "react-bootstrap";
-import CheckBox from "../form/Checkbox";
 import * as Yup from "yup";
 import Select from "../form/Select";
 import PhoneFormatInput from "../form/PhoneFormatInput";
@@ -261,6 +260,15 @@ const SignUpAcademician = () => {
                     <option value="Bilgisayar Mühendisliği">
                       Bilgisayar Mühendisliği
                     </option>
+                    <option value="Bilgisayar Mühendisliği">
+                      Mekatronik Mühendisliği
+                    </option>
+                    <option value="Bilgisayar Mühendisliği">
+                      Elektrik Elektronik Mühendisliği
+                    </option>
+                    <option value="Bilgisayar Mühendisliği">
+                      Makine Mühendisliği
+                    </option>
                   </Select>
                   <Input
                     name={"orcid_number"}
@@ -297,9 +305,15 @@ const SignUpAcademician = () => {
                   >
                     <option value="Dekan">Dekan</option>
                     <option value="Dekan Yardımcısı">Dekan Yardımcısı</option>
+
+                    <option value="Bölüm Başkanı">Bölüm Başkanı</option>
+                    <option value="Bölüm Başkan Yardımcısı">
+                      Bölüm Başkan Yardımcısı
+                    </option>
                     <option value="Öğretim Üyesi/Elemanı">
                       Öğretim Üyesi/Elemanı
                     </option>
+                    <option value="Kalite Yöneticisi">Kalite Yöneticisi</option>
                   </Select>
                 </Col>
               </Col>

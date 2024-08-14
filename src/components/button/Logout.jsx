@@ -9,8 +9,7 @@ const Logout = () => {
   return (
     <button
       onClick={() => {
-        deleteCookie("token");
-        router.replace("/sign-in");
+      
       }}
     >
       Çıkış yap

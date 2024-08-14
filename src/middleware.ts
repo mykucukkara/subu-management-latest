@@ -11,7 +11,9 @@ export async function middleware(req: NextRequest) {
     "/favicon.ico",
     "/images",
     "/css",
+    "/vendor",
     "/js",
+    "/scss",
   ];
 
   // Statik dosya isteklerini hariç tutmak için kontrol
@@ -80,5 +82,5 @@ export async function middleware(req: NextRequest) {
 }
 
 export const config = {
-  matcher: "/:path*",
+  matcher: ["/:path*", "/form/:path*"],
 };
