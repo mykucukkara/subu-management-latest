@@ -227,6 +227,7 @@ export const SingleFormPage = () => {
                   form.inputs?.map((el, index) => {
                     return el.fieldType == "radio" ? (
                       <Form.Group
+                        key={index}
                         className="mb-5"
                         controlId="exampleForm.ControlInput2"
                       >
@@ -250,8 +251,9 @@ export const SingleFormPage = () => {
                           ></FontAwesomeIcon>
                         </div>
                         <div className="d-flex align-items-center justify-content-between flex-wrap gap-5">
-                          {el?.options?.map((item) => (
+                          {el?.options?.map((item, index) => (
                             <Form.Check
+                              key={index}
                               disabled
                               label={item}
                               type="radio"
@@ -262,6 +264,7 @@ export const SingleFormPage = () => {
                     ) : el.fieldType == "select" ? (
                       <Form.Group
                         className="mb-5"
+                        key={index}
                         controlId="exampleForm.ControlInput2"
                       >
                         <div className="d-flex align-items-center justify-content-between">
@@ -285,16 +288,20 @@ export const SingleFormPage = () => {
                         </div>
                         <Form.Select
                           disabled
+                          key={index}
                           placeholder="Dolduracak kişiler tarafından girilecek değer..."
                         >
-                          {el?.options?.map((item) => (
-                            <option value={item}>{item}</option>
+                          {el?.options?.map((item, index) => (
+                            <option key={index} value={item}>
+                              {item}
+                            </option>
                           ))}
                         </Form.Select>
                       </Form.Group>
                     ) : el.fieldType == "checkbox" ? (
                       <Form.Group
                         className="mb-5"
+                        key={index}
                         controlId="exampleForm.ControlInput2"
                       >
                         <div className="d-flex align-items-center justify-content-between">
@@ -326,6 +333,7 @@ export const SingleFormPage = () => {
                       </Form.Group>
                     ) : (
                       <Form.Group
+                        key={index}
                         className="mb-5"
                         controlId="exampleForm.ControlInput2"
                       >

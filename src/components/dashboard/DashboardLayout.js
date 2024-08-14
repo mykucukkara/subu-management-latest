@@ -8,8 +8,10 @@ import { getCookie } from "cookies-next";
 import { UserProvider } from "../../app/context/UserContext";
 import { Modal } from "react-bootstrap";
 
+const BASE_URL = process.env.BASE_URL;
+
 export const getUser = async () =>
-  fetch("http://localhost:3000/api/user", {
+  fetch("/api/user", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -189,7 +191,7 @@ export default function DashboardLayout({ children }) {
                     className="dropdown-menu dropdown-menu-right shadow animated--grow-in"
                     aria-labelledby="userDropdown"
                   >
-                     <a
+                    <a
                       className="dropdown-item"
                       href="#"
                       data-toggle="modal"
@@ -208,7 +210,6 @@ export default function DashboardLayout({ children }) {
                       <i className="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400" />
                       Çıkış Yap
                     </a>
-                   
                   </div>
                 </li>
               </ul>
@@ -274,7 +275,7 @@ const LogoutModal = ({ show, onHide }) => {
             </button>
           </div>
           <div className="modal-body">
-            Oturumun sonlanması için "Çıkış yap" butonuna basınız.
+            Oturumun sonlanması için &quot;Çıkış yap&quot; butonuna basınız.
           </div>
           <div className="modal-footer">
             <button

@@ -52,7 +52,7 @@ const StatisticsFilledInputsModal = ({ show, onHide, data }) => {
           onClick={handleSingleSaveExcel}
           style={{ background: "#007233", border: "none" }}
         >
-          Excel'e kaydet
+          Excel&apos;e kaydet
         </Button>
       </Modal.Header>
       <Modal.Body>
@@ -81,6 +81,7 @@ const StatisticsFilledInputsModal = ({ show, onHide, data }) => {
           data?.form?.fields?.map((el, index) => {
             return el.fieldType == "radio" ? (
               <Form.Group
+                key={index}
                 className="mb-5"
                 controlId="exampleForm.ControlInput2"
               >
@@ -88,8 +89,9 @@ const StatisticsFilledInputsModal = ({ show, onHide, data }) => {
                   <Form.Label>{el?.label}</Form.Label>
                 </div>
                 <div className="d-flex align-items-center justify-content-between flex-wrap gap-5">
-                  {el?.options?.map((item) => (
+                  {el?.options?.map((item, index) => (
                     <Form.Check
+                      key={index}
                       disabled
                       checked={
                         data.responses.find((item) => item.field == el._id)
@@ -104,6 +106,7 @@ const StatisticsFilledInputsModal = ({ show, onHide, data }) => {
             ) : el.fieldType == "select" ? (
               <Form.Group
                 className="mb-5"
+                key={index}
                 controlId="exampleForm.ControlInput2"
               >
                 <div className="d-flex align-items-center justify-content-between">
@@ -120,13 +123,16 @@ const StatisticsFilledInputsModal = ({ show, onHide, data }) => {
                   >
                     {data.responses.find((item) => item.field == el._id)?.value}
                   </option>
-                  {el?.options?.map((item) => (
-                    <option value={item}>{item}</option>
+                  {el?.options?.map((item, index) => (
+                    <option key={index} value={item}>
+                      {item}
+                    </option>
                   ))}
                 </Form.Select>
               </Form.Group>
             ) : el.fieldType == "checkbox" ? (
               <Form.Group
+                key={index}
                 className="mb-5"
                 controlId="exampleForm.ControlInput2"
               >
@@ -149,6 +155,7 @@ const StatisticsFilledInputsModal = ({ show, onHide, data }) => {
             ) : (
               <Form.Group
                 className="mb-5"
+                key={index}
                 controlId="exampleForm.ControlInput2"
               >
                 <div className="d-flex align-items-center justify-content-between">

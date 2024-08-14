@@ -83,7 +83,7 @@ export const unpublishAndDeleteAssingedFormToUsers = async (formId) =>
   });
 
 export const getFormForStatistics = async () =>
-  fetch("/api/forms/statistics", {
+  fetch("/api/forms", {
     method: "GET",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
   }).then((res) => {

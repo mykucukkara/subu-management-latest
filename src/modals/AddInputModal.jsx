@@ -80,8 +80,8 @@ export const AddInputModal = ({ show, onHide, form, setForm }) => {
             </Button>
           </div>
           <div className="d-flex align-items-center w-100 py-3  gap-3 flex-wrap">
-            {options.optionList?.map((el) => (
-              <div className="d-flex align-items-center   gap-2">
+            {options.optionList?.map((el, index) => (
+              <div key={index} className="d-flex align-items-center   gap-2">
                 <div className="bg-primary small rounded-3 px-2 py-1 text-white">
                   {el}
                 </div>

@@ -83,7 +83,7 @@ const StatisticsDetailModal = ({ show, onHide, formId }) => {
               onClick={handleSaveExcel}
               style={{ background: "#007233", border: "none" }}
             >
-              Excel'e kaydet
+              Excel&apos;e kaydet
             </Button>
           </div>
         ) : null}
@@ -92,8 +92,9 @@ const StatisticsDetailModal = ({ show, onHide, formId }) => {
         {loading ? (
           <FontAwesomeIcon size="5x" icon={faSpinner} spin />
         ) : (
-          form?.map((el) => (
+          form?.map((el, index) => (
             <StatisticsFormPersonDetail
+              key={index}
               setFilledFormShow={setFilledFormShow}
               setSelectedAssignedFormId={setSelectedAssignedFormId}
               data={el}

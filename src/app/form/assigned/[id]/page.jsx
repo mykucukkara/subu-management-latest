@@ -122,6 +122,7 @@ export const SingleAssignedFormPage = () => {
                               {el?.options?.map((item, idx) => (
                                 <Form.Group
                                   className="mb-5 "
+                                  key={idx}
                                   controlId={item + idx}
                                 >
                                   <Form.Label htmlFor={item + idx}>
@@ -203,8 +204,10 @@ export const SingleAssignedFormPage = () => {
                               <option value={""} selected disabled>
                                 Seçiniz
                               </option>
-                              {el?.options?.map((item) => (
-                                <option value={item}>{item}</option>
+                              {el?.options?.map((item, index) => (
+                                <option key={index} value={item}>
+                                  {item}
+                                </option>
                               ))}
                             </Form.Select>
                           </Form.Group>

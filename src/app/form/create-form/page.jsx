@@ -137,6 +137,7 @@ export const CreateFormPage = () => {
               form.inputs?.map((el, index) => {
                 return el.fieldType == "radio" ? (
                   <Form.Group
+                    key={index}
                     className="mb-5"
                     controlId="exampleForm.ControlInput2"
                   >
@@ -157,9 +158,10 @@ export const CreateFormPage = () => {
                       ></FontAwesomeIcon>
                     </div>
                     <div className="d-flex align-items-center justify-content-between flex-wrap gap-5">
-                      {el?.options?.map((item) => (
+                      {el?.options?.map((item, index) => (
                         <Form.Check
                           disabled
+                          key={index}
                           label={item}
                           type="radio"
                         ></Form.Check>
@@ -191,13 +193,16 @@ export const CreateFormPage = () => {
                       disabled
                       placeholder="Dolduracak kişiler tarafından girilecek değer..."
                     >
-                      {el?.options?.map((item) => (
-                        <option value={item}>{item}</option>
+                      {el?.options?.map((item, index) => (
+                        <option key={index} value={item}>
+                          {item}
+                        </option>
                       ))}
                     </Form.Select>
                   </Form.Group>
                 ) : el.fieldType == "checkbox" ? (
                   <Form.Group
+                    key={index}
                     className="mb-5"
                     controlId="exampleForm.ControlInput2"
                   >
@@ -223,6 +228,7 @@ export const CreateFormPage = () => {
                   </Form.Group>
                 ) : (
                   <Form.Group
+                    key={index}
                     className="mb-5"
                     controlId="exampleForm.ControlInput2"
                   >

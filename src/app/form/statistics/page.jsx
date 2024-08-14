@@ -49,8 +49,8 @@ const FormStatisticsPage = () => {
         </Card.Header>
         <Card.Body className="">
           <Row>
-            {forms.map((item) => (
-              <Col lg={3} sm={12} className="p-3" xs={12}>
+            {forms.map((item, index) => (
+              <Col lg={3} sm={12} key={index} className="p-3" xs={12}>
                 <SingleFormStatisticsItem
                   selectedFormId={selectedFormId}
                   setSelectedFormId={setSelectedFormId}
